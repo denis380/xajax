@@ -1,0 +1,18 @@
+﻿passo a passo:
+--------------------------------------------
+
+1. Incluir a biblioteca xajax;
+
+2. Instanciar a classe;
+
+3. Registrar a função, ou, as funções, que serão usadas. Lembrando que toda função deverá instanciar o objeto de resposta ($objResponse = new xajaxResponse();) e retornar o mesmo (return $objResponse;);
+
+4. Chamamos a função para processar a resposta ($xajax->getXML(););
+
+5. Entre as tags <head></head>, chamamos a função para imprimir o código javascript, ($xajax->printJavascript(“xajax/”););
+
+6. Chamamos nossa(s) função no formulário para realizar as ações necessárias. Para passar os valores, podemos utilizar: xajax.getFormValues(‘formID’).Ou até mesmo, passar um campo individual através do: document.getElementById(‘campoID’).value. Lembrando que quando passamos através do xajax.getFormValues(‘formID’), os dados ficam armazenados em um array.
+
+7. Fazemos as ações necessárias, recuperando os valores que foram passados através do parâmetro da função.
+
+8. Colocamos a resposta em alguma div, através do: $objResponse->assign(“divID”, “innerHTML”, “Conteudo a ser colocado”);
